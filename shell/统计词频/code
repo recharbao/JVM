@@ -1,0 +1,3 @@
+cat words.txt | xargs -n1 | sort | uniq -c | sort -rn | awk '{print $2, $1;}'
+
+awk '{for(i = 1; i <= NF; i++) {map[$i]++;}}; END{for(i in map){print i, map[i];}}' words.txt | sort -rn -k2
